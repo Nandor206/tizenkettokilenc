@@ -3,3 +3,4 @@ Our plan was to recreate the 9/11 events **as a joke.** We don't have anything a
 
 - The 3D files are done by Kilián Dániel
 - The scripts are done by me via the help of chatGPT and a friend of ours.
+- What if I don't accept?
