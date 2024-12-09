@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bijmgcxsbxrna"]
+
+[ext_resource type="PackedScene" uid="uid://dmwcdmce4jgq4" path="res://3D/torony.glb" id="1_heajj"]
+[ext_resource type="Script" path="res://src/model_shifter.gd" id="2_xwetr"]
+[ext_resource type="PackedScene" uid="uid://don7fcacqerp2" path="res://tscn/torony_torott.tscn" id="3_poqus"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8ix18"]
+points = PackedVector3Array(63, 541, 69.6572, 63, 541, -69.6572, -63, 541, 69.6572, 63, -541, 69.6572, -63, 541, -69.6572, 63, -541, -69.6572, -63, -541, 69.6572, -63, -541, -69.6572)
+
+[node name="torony" instance=ExtResource("1_heajj")]
+script = ExtResource("2_xwetr")
+broken_model = ExtResource("3_poqus")
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_8ix18")

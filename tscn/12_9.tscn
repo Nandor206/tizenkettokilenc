@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://5snf78awgofm"]
+
+[ext_resource type="PackedScene" uid="uid://b0e5i2dvwd4de" path="res://tscn/talaj.tscn" id="1_fp0uu"]
+[ext_resource type="PackedScene" uid="uid://2poxq64fso1q" path="res://tscn/repcsi.tscn" id="2_05r3g"]
+[ext_resource type="PackedScene" uid="uid://kjkd08u6p53h" path="res://tscn/torony.tscn" id="3_tdtjp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u5wqo"]
+
+[sub_resource type="Sky" id="Sky_fpb5e"]
+sky_material = SubResource("ProceduralSkyMaterial_u5wqo")
+
+[sub_resource type="Environment" id="Environment_pag5i"]
+background_mode = 2
+background_color = Color(0.818644, 0.680643, 0.649554, 1)
+background_energy_multiplier = 2.8
+sky = SubResource("Sky_fpb5e")
+
+[node name="12_9" type="Node3D"]
+
+[node name="Talaj" parent="." instance=ExtResource("1_fp0uu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.652344, -2.49069, 1.19409)
+
+[node name="Repcsi" parent="." instance=ExtResource("2_05r3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 2593)
+
+[node name="Camera3D2" type="Camera3D" parent="Repcsi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 25)
+fov = 80.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 0, 197, 488)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pag5i")
+
+[node name="Torony" parent="." instance=ExtResource("3_tdtjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 541, 0)
